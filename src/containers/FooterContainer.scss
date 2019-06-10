@@ -1,0 +1,41 @@
+.footer {
+    height: 263px;
+    background-color: #111E2A;
+
+    position: absolute;
+    bottom: 0;
+
+    
+}
+
+.footer_info {
+    .info {
+        display: inline-block !important;
+        margin-left: 2.5em;
+    }
+
+    .info_list {
+        list-style-type: none;
+
+        li {
+            margin-top: .7em;
+        }
+    }
+}
+
+
+.footer_social {
+    .social_list {
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            margin-top: .7em;
+            margin: 15px;
+        }
+
+        .social_btn {
+            width: 50px;
+        }
+    }
+}

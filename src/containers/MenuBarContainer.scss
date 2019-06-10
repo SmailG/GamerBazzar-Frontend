@@ -1,0 +1,46 @@
+@import '../styles/index.scss';
+
+.menubar {
+    padding: 0 110px !important; 
+    height: 101px;
+    background-color: #111E2A
+}
+
+.menubar_left {
+    color: white;
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+
+.menubar_right {
+    .menubar_unauthorized {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menubar_button {
+        width: 200px;
+        height: 50px;
+        border-radius: 100px;
+        border: 3px solid #4488D2;
+
+    }
+
+    .menubar_button--get-started {
+        margin-left: 15px;
+        background: linear-gradient(#4FC3F7,#3949AB);
+        color: white;
+    }  
+
+    .menubar_button--login {
+        color: #4488D2;
+        margin-left: 15px;
+        background-color: transparent;
+    }   
+
+    
+}

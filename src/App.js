@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import MainContainer from './containers/MainContainer.jsx';
+import MenuContainer from './containers/MenuBarContainer.jsx';
+import FooterContainer from './containers/FooterContainer';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -40,7 +42,9 @@ class App extends Component {
 		<Provider store={store}>
       <Router>
         <React.Fragment>
+          <PublicRoute path="/" component={MenuContainer} />
           <PublicRoute path="/" component={MainContainer} />
+          <PublicRoute path="/" component={FooterContainer} />
         </React.Fragment>
       </Router>
 		</Provider>
