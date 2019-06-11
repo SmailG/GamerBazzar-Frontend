@@ -3,7 +3,12 @@
 .menubar {
     padding: 0 110px !important; 
     height: 101px;
-    background-color: #111E2A
+    background-color: #111E2A;
+
+    position: fixed !important;
+    z-index: 100 !important;
+    top: 0;
+    left: 0;
 }
 
 .menubar_left {
@@ -12,7 +17,14 @@
     span {
         display: inline-block;
         vertical-align: middle;
+        font-size: 18px;
+        margin: 0 10px;
     }
+    padding-right: 10px !important;
+}
+
+.menubar_main {
+    flex-shrink: 4;
 }
 
 

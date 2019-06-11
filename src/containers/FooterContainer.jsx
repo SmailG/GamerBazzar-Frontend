@@ -8,10 +8,12 @@ const FooterContainer = () => {
     return (
         <Grid>
             <Grid.Row className="footer">
-                <Grid.Column className="footer_logo" width={4} verticalAlign="middle">
-
+                <Grid.Column className="footer_logo" width={3} verticalAlign="middle">
+                    <div>
+                        <img src="" alt="g4l-logo"/>
+                    </div>
                 </Grid.Column>
-                <Grid.Column className="footer_info" width={4} verticalAlign="middle">
+                <Grid.Column className="footer_info" width={5} verticalAlign="middle">
                     <div className="info">
                     <ul className="info_list">
                         <li>About us</li>
@@ -29,16 +31,16 @@ const FooterContainer = () => {
                 </Grid.Column>
                 <Grid.Column className="footer_social" width={5} verticalAlign="middle">
                     <ul className="social_list">
-                        <li>
+                        <li className="social_btn">
                            <Icon name="facebook" />
                         </li>
-                        <li>
-                            <Icon name="twitter" />>
+                        <li className="social_btn">
+                            <Icon name="twitter" />
                         </li>
-                        <li>
+                        <li className="social_btn">
                             <Icon name="viber" />
                         </li>
-                        <li>
+                        <li className="social_btn">
                             <Icon name="youtube" />
                         </li>
                     </ul>

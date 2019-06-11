@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Search, Grid, Header, Segment } from 'semantic-ui-react'
+import './MainContainer.scss';
 
 class MainContainer extends Component {
     render() {

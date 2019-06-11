@@ -1,11 +1,6 @@
 .footer {
     height: 263px;
     background-color: #111E2A;
-
-    position: absolute;
-    bottom: 0;
-
-    
 }
 
 .footer_info {
@@ -27,15 +22,19 @@
 .footer_social {
     .social_list {
         list-style-type: none;
+        position: relative;
+        left: 50%;
 
         li {
             display: inline-block;
             margin-top: .7em;
-            margin: 15px;
+            margin: 12.5px;
         }
 
         .social_btn {
-            width: 50px;
+            img {
+                width: 50px;
+            }
         }
     }
 }

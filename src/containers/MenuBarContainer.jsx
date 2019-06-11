@@ -25,6 +25,7 @@ class MenubarContainer extends Component {
                         </span>
                         <span>Categories</span>
                         <span>About us</span>
+                        <span>Support</span>
                     </Grid.Column>
 
                     <Grid.Column className="menubar_main" width={6} verticalAlign="middle">
