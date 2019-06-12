@@ -1,7 +1,7 @@
 @import '../styles/index.scss';
 
 .menubar {
-    padding: 0 110px !important; 
+    padding: 0 80px !important; 
     height: 101px;
     background-color: #111E2A;
 
@@ -21,6 +21,26 @@
         margin: 0 10px;
     }
     padding-right: 10px !important;
+
+    .menubar_dropdown {
+        .text {
+            color: #46A2D0;
+        }
+
+        .dropdown.icon {
+            color: #46A2D0;
+        }
+
+        .menu.transition.visible {
+            background: rgba(68,136,210, 0.4);
+        }
+
+        .item {
+            * {
+                color: #fff;
+            }
+        }
+    }
 }
 
 .menubar_main {

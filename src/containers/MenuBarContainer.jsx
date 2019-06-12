@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './MenuBarContainer.scss';
 import SearchField from '../components/menu-bar/search-field.jsx';
-import { Search, Grid, Header, Segment, Button } from 'semantic-ui-react'
+import { Search, Grid, Header, Segment, Button, Dropdown } from 'semantic-ui-react'
 
 class MenubarContainer extends Component {
     
@@ -23,7 +23,23 @@ class MenubarContainer extends Component {
                         <span className="logo">
                             <img src="" alt="g4l logo"/>
                         </span>
-                        <span>Categories</span>
+                        <span>
+                            <Dropdown text='Category' className="menubar_dropdown">
+                                <Dropdown.Menu>
+                                    <Dropdown.Item text='New' />
+                                    <Dropdown.Item text='Open...'  />
+                                    <Dropdown.Item text='Save as...' />
+                                    <Dropdown.Item text='Rename'  />
+                                    <Dropdown.Item text='Make a copy' />
+                                    <Dropdown.Item icon='folder'  />
+                                    <Dropdown.Item icon='trash' />
+                                    <Dropdown.Divider />
+                                    <Dropdown.Item text='Download As...' />
+                                    <Dropdown.Item text='Publish To Web' />
+                                    <Dropdown.Item text='E-mail Collaborators' />
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </span>
                         <span>About us</span>
                         <span>Support</span>
                     </Grid.Column>
