@@ -5,6 +5,41 @@
     background-image: url("../assets/main-background.png");
 }
 
+.main_content {
+    div {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+.main_text {
+    font-size: 32px;
+    p {
+        text-align: center;
+    }
+}
+
+.main_buttons {
+    margin-top: 50px !important;
+    text-align: center;
+
+    button {
+        width: 300px;
+        border-radius: 100px !important;
+        color: #4488D2 !important;
+        margin-left: 15px !important;
+        background-color: transparent !important;
+        border: 3px solid #4488D2 !important;
+    }
+
+    button:hover {
+        background: linear-gradient(#4FC3F7,#3949AB) !important;
+        color: #fff !important;
+    }
+}
+
+
+
 .popular {
     height: 795px;
     background: #111E2A;
