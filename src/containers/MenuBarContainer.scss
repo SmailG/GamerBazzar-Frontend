@@ -39,7 +39,16 @@
         height: 50px;
         border-radius: 100px;
         border: 3px solid #4488D2;
+    }
 
+    .menubar_button:hover {
+        background: linear-gradient(#4FC3F7, #3949AB) !important;
+        color: #FFF;
+    }
+
+    .menubar_button:focus {
+        background: linear-gradient(#4FC3F7, #3949AB) !important;
+        color: #FFF;
     }
 
     .menubar_button--get-started {
