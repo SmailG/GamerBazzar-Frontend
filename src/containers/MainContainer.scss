@@ -43,6 +43,49 @@
 .popular {
     height: 795px;
     background: #111E2A;
+    width: 100%;
+
+    .popular_menu {
+        padding: 10px 5%;
+    }
+
+    .popular_menu-heading {
+        padding: 7.5px 5px;
+        border-bottom: 2px solid #4FC3F7;
+        width: fit-content;
+    }
+
+    .popular_menu-items {
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 10px 10px 10px;
+            display: inline-block;
+        }
+    }
+
+    .popular_menu-icon {
+        width: 65px;
+    }
+
+    .popular_menu-icon--selected {
+        svg {
+            stroke: #4488D2 !important;
+             fill: #4488D2 !important;
+        }
+    }
+
+
+    .popular_carousel {
+        padding: 20px;
+        
+        .item-card {
+            display: inline-block;
+        }
+    }
 }
 
 .recommended {

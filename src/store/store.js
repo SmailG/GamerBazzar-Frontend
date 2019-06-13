@@ -13,8 +13,11 @@ const logger = createLogger({
 });
 // I use thunk to make api calls there, I'd normally use custom middleware but let's keep it simple..
 const middleware = applyMiddleware(promiseMiddleware(), thunk, logger, gamerBazzarMiddleware);
-
-export default createStore(
+const store = createStore(
 	reducers,
 	middleware
 )
+
+window.store = store;
+
+export default store;

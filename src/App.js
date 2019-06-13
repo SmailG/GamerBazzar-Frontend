@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import MainContainer from './containers/MainContainer.jsx';
 import MenuContainer from './containers/MenuBarContainer.jsx';
 import FooterContainer from './containers/FooterContainer';
+import { setWindowWidth } from './actions/uiActions';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -37,6 +38,20 @@ const PublicRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
+
+  resizeHandler = (e) => {
+    console.log(e);
+    store.dispatch(setWindowWidth(document.body.clientWidth));
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('resize', (e) => this.resizeHandler(e));
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', (e) => this.resizeHandler(e));
+  }
+
   render() {
     return (
 		<Provider store={store}>

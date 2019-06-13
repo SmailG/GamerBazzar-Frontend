@@ -109,7 +109,7 @@ export const removeCtxErrors = (ctx) => ({
 	ctx
 });
 
-export const setServerCommStatus = (status) => {
+export const setServerCommStatus = (status) => ({
     type: 'SET_SERVER_COMM_STATUS',
     status
-}
+})
