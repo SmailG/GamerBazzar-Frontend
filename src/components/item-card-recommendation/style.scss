@@ -1,0 +1,48 @@
+.recommendation-card {
+    width: 465px;
+    height: 465px;
+    background: linear-gradient(#4FC3F7, #3949AB);
+    border-radius: 20px;
+
+    margin: 20px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.recommendation-card_title {
+    font-size: 37px;
+    font-weight: bold;
+
+    position: absolute;
+    right: 20px;
+    top: 30px;
+
+}
+
+.recommendation-card_details {
+    height: 40%;
+    width: 100%;
+    background: #fff;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 20px 20px;
+}
+
+.recommendation-card_item-details {
+    color: #4FC3F7;
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 5px;
+
+}
+
+.recommendation-card_game-details {
+    color: #707070;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
