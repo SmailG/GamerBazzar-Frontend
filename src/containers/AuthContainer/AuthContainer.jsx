@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './AuthContainer.scss';
 import { Button, Header, Input, Modal, Checkbox } from 'semantic-ui-react'
+import SvgLoader from '../../components/common/svg';
 
 class AuthContainer extends Component {
     
@@ -18,6 +19,20 @@ class AuthContainer extends Component {
         <div className="login-modal">
             <div className="login-modal_header">
                 <h2>Login</h2>
+            </div>
+
+            <div className="login-modal_social">
+                <a className="login-modal_social-btn">
+                    <SvgLoader name="facebook-social"/>
+                </a>
+
+                <a className="login-modal_social-btn">
+                    <SvgLoader name="google-social"/>
+                </a>
+
+                <a className="login-modal_social-btn">
+                    <SvgLoader name="twitter-social" />
+                </a>
             </div>
 
             <div className="login-modal_form">

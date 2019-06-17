@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="587" height="88" viewBox="0 0 587 88">
+  <defs>
+    <filter id="Rectangle_120" x="0" y="0" width="587" height="88" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_434" data-name="Group 434" transform="translate(-656 -409)">
+    <g transform="matrix(1, 0, 0, 1, 656, 409)" filter="url(#Rectangle_120)">
+      <rect id="Rectangle_120-2" data-name="Rectangle 120" width="569" height="70" rx="35" transform="translate(9 6)" fill="#627aad"/>
+    </g>
+    <text id="Connect_with_Facebook" data-name="Connect with Facebook" transform="translate(847 455)" fill="#fff" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Connect with Facebook</tspan></text>
+    <path id="Path_237" data-name="Path 237" d="M975.73,362.927h-4.88v17.48h-7.28v-17.48h-3.44v-6.16h3.44v-4a8.657,8.657,0,0,1,.56-3.16,6.14,6.14,0,0,1,2.2-2.92,7.68,7.68,0,0,1,4.56-1.28l5.4.04v6h-3.92a1.551,1.551,0,0,0-1,.32,1.684,1.684,0,0,0-.52,1.36v3.64h5.52Z" transform="translate(-256.13 86)" fill="#fff"/>
+  </g>
+</svg>

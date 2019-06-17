@@ -59,8 +59,8 @@ const Popular = ({ popularGames }) => {
                 1600: { items: 3 }
             }}
             stagePadding={{
-                paddingLeft: 0,
-                paddingRight: 20
+                paddingLeft: 20,
+                paddingRight: 0
             }}
             mouseDragEnabled
             items={popularGames} >

@@ -5,7 +5,14 @@
     // width: 50% !important;
 
     border-radius: 10px !important;
-    top: 10% !important;
+    margin-top: auto !important;
+    display: inline-block !important;
+    position: relative !important;
+    top: -5% !important;
+
+    overflow-y: scroll;
+    max-height: 90vh;
+
 }
 
 .login-modal {
@@ -104,4 +111,20 @@
     span {
         margin: 40px 0 0 20px;
     }
+}
+
+.login-modal_social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-modal_social-btn {
+    // padding: 0 !important;
+    cursor: pointer;
+
+}
+
+.login-modal_social-btn:hover {
+    opacity: .9;
 }
