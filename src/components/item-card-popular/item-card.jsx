@@ -6,7 +6,7 @@ const ItemCardPopular = ({ title, image, alt }) => {
     return (
         <div className="popular-game-card">
             <span className="popular-game-card_title">{title}</span>
-            <img src="" alt=""/>
+            <img className="popular-game-card_avatar" src={image} alt={alt}/>
         </div>
     );
 }

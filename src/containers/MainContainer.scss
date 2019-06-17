@@ -45,12 +45,12 @@
 }
 
 .popular {
-    min-height: 795px;
+    min-height: 750px;
     background: #111E2A;
     width: 100%;
 
     .popular_menu {
-        padding: 10px 5%;
+        padding: 30px 5% 75px;
     }
 
     .popular_menu-items {
@@ -79,7 +79,11 @@
 
     .popular_carousel {
         padding: 20px;
-        
+
+        .alice-carousel__wrapper {
+            overflow: visible !important;
+        }
+
         .item-card {
             display: inline-block;
         }

@@ -7,6 +7,8 @@ import MainHero from '../components/main-container/mainHero';
 import Popular from '../components/main-container/popular';
 import Recommendation from '../components/main-container/recommendation';
 
+import TestGameAvatar from '../assets/linage-game-avatar.svg';
+
 class MainContainer extends Component {
 
     render() {
@@ -30,8 +32,8 @@ const mapStateToProps = (state, ownProps) => {
 
     return{
         popularGames: [
-            <ItemCard title="WORLD OF WARCRAFT" />,
-            <ItemCard />,
+            <ItemCard title="WORLD OF WARCRAFT" image={TestGameAvatar} />,
+            <ItemCard title="LINEAGE" image={TestGameAvatar}/>,
             <ItemCard />,
             <ItemCard />,
             <ItemCard />,
