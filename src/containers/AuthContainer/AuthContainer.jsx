@@ -61,6 +61,7 @@ class AuthContainer extends Component {
 
         return (
             <Modal
+                size={"small"}
                 className="auth-modal"
                 defaultOpen
                 centered={false}
