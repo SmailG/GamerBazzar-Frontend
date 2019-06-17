@@ -61,7 +61,7 @@ class App extends Component {
           <PublicRoute path="/" component={MenuContainer} />
           <PublicRoute path="/" component={MainContainer} />
           <PublicRoute path="/" component={FooterContainer} />
-          <PublicRoute path="/login" component={AuthContainer} />
+          <PublicRoute path="/(login|register)" component={AuthContainer} />
         </React.Fragment>
       </Router>
 		</Provider>

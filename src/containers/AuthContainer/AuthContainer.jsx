@@ -6,16 +6,15 @@ import { Button, Header, Input, Modal, Checkbox } from 'semantic-ui-react'
 class AuthContainer extends Component {
     
     closeHandler = () => {
-        this.props.history.goBack();
+        this.props.history.push('/');
+    }
+
+    getStartedHandler = (e) => {
+        e.preventDefault();
+        this.props.history.push('/register');
     }
 
     loginContent = (
-        <div>
-
-        </div>
-    );
-
-    registrationContent = (
         <div className="login-modal">
             <div className="login-modal_header">
                 <h2>Login</h2>
@@ -23,11 +22,11 @@ class AuthContainer extends Component {
 
             <div className="login-modal_form">
                 <div className="login-modal_input">
-                  <Input placeholder='E-mail Address' />
+                    <Input placeholder='E-mail Address' />
                 </div>
 
                 <div className="login-modal_input">
-                 <Input placeholder='Password' />
+                    <Input placeholder='Password' />
                 </div>
 
                 <div className="login-modal_options">
@@ -43,16 +42,22 @@ class AuthContainer extends Component {
                     </Button>
                     <span>
                         {'Not a member yet? Click here to'}
-                        <a href="">{' Get started'}</a>
+                        <a onClick={this.getStartedHandler} href="">{' Get started'}</a>
                     </span>
                 </div>
             </div>
-
         </div>
+    );
+
+    registrationContent = (
+       <div className="registration-modal">
+
+       </div>
     );
     
     render() {
-        const { history, mode } = this.props;
+        const { history } = this.props;
+        let mode = this.props.location.pathname === '/login' ? 'login' : 'register'
 
         return (
             <Modal

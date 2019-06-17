@@ -19,7 +19,7 @@ class MenubarContainer extends Component {
     }
 
     handleGetStarted = () => {
-        
+        this.props.history.push('/register')
     }
 
     render() {
