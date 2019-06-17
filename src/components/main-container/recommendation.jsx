@@ -9,7 +9,7 @@ const Recommendation = ({ recommendations }) => {
             <Grid.Row className="recommended_heading">
                 <h2 className="main_submenu-heading" >Recommendation</h2>
             </Grid.Row>
-            <Grid.Row className="recommended_heading">
+            <Grid.Row className="recommended_items">
                <div className="recommended_container">
                     <ItemCardRecommended isUserOnline={true}  listing={{currency: 'USD', price: '11.42'}}/>
                     <ItemCardRecommended   listing={{currency: 'USD', price: '11.42'}}/>

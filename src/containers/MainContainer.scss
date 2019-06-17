@@ -1,6 +1,6 @@
 .main {
     margin-top: 101px;
-    height: 440px;
+    min-height: 440px;
     background: #292929;
     background-image: url("../assets/main-background.png");
 }
@@ -45,7 +45,7 @@
 }
 
 .popular {
-    height: 795px;
+    min-height: 795px;
     background: #111E2A;
     width: 100%;
 
@@ -88,11 +88,13 @@
 
 .recommended {
     background: #212D38;
-    height: 1300px;
+    min-height: 750px;
     width: 100%;
 
+    padding: 30px 100px 70px 100px !important;
+    
     .recommended_heading {
-     padding: 10px 5%;
+     padding: 10px 35px;
     }
 
    .recommended_container {

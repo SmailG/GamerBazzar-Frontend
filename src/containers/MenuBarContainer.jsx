@@ -14,7 +14,17 @@ class MenubarContainer extends Component {
 
     }
 
+    handleLogin = () => {
+        this.props.history.push('/login')
+    }
+
+    handleGetStarted = () => {
+        
+    }
+
     render() {
+        const { history } = this.props;
+
         return (
             <Grid>
                 <Grid.Row className="menubar">
@@ -50,8 +60,8 @@ class MenubarContainer extends Component {
 
                     <Grid.Column className="menubar_right" width={5} verticalAlign="middle">
                         <div className="menubar_unauthorized">
-                            <Button className="menubar_button menubar_button--get-started">GET STARTED</Button>
-                            <Button className="menubar_button menubar_button--login">LOGIN</Button>
+                            <Button onClick={this.handleGetStarted} className="menubar_button menubar_button--get-started">GET STARTED</Button>
+                            <Button onClick={this.handleLogin} className="menubar_button menubar_button--login">LOGIN</Button>
                         </div>
                     </Grid.Column>
 

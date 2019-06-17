@@ -16,9 +16,9 @@ const ItemCardRecommended = ({ listing, image, alt, isUserOnline }) => {
                 <span className="recommendation-card_game-details">
                     Path of exile (Global)
                 </span>
-        
-                <UserAvatar src={DefaultAvatarSmall} user={{name: 'John Doe'}} isOnline={isUserOnline} />
-
+                <div className="recommendation-card_user-details">
+                    <UserAvatar src={DefaultAvatarSmall} user={{name: 'John Doe'}} isOnline={isUserOnline} />
+                </div>
             </div>
         </div>
     );

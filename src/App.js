@@ -7,6 +7,7 @@ import MainContainer from './containers/MainContainer.jsx';
 import MenuContainer from './containers/MenuBarContainer.jsx';
 import FooterContainer from './containers/FooterContainer';
 import { setWindowWidth } from './actions/uiActions';
+import AuthContainer from './containers/AuthContainer/AuthContainer';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -60,6 +61,7 @@ class App extends Component {
           <PublicRoute path="/" component={MenuContainer} />
           <PublicRoute path="/" component={MainContainer} />
           <PublicRoute path="/" component={FooterContainer} />
+          <PublicRoute path="/login" component={AuthContainer} />
         </React.Fragment>
       </Router>
 		</Provider>

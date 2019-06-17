@@ -1,23 +1,31 @@
 .recommendation-card {
-    width: 465px;
-    height: 465px;
+    flex-basis: 27%;
+    height: 440px;
     background: linear-gradient(#4FC3F7, #3949AB);
     border-radius: 20px;
 
-    margin: 20px;
+    // flex: 1;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    margin: 30px 30px;
     overflow: hidden;
 
     position: relative;
 }
 
+
 .recommendation-card_title {
-    font-size: 37px;
+    font-size: 2.6rem;
     font-weight: bold;
 
     position: absolute;
     right: 20px;
     top: 30px;
 
+}
+
+.recommendation-card_user-details {
 }
 
 .recommendation-card_details {
@@ -44,5 +52,51 @@
     color: #707070;
     font-size: 20px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 12.5px;
+}
+
+
+
+
+// media queries
+
+// wide
+@media only screen and (min-width: 2000px) {
+    .recommendation-card {
+        flex-basis: 11%;
+    }
+}
+
+// medium screen
+@media only screen and (max-width: 1265px) {
+    .recommendation-card {
+        flex-basis: 31%;
+    }   
+
+    .recommendation-card_title {
+        font-size: 2.5rem;
+    }
+}
+
+// small monitor
+@media only screen and (max-width: 875px) {
+    .recommendation-card {
+        flex-basis: 45%;
+    }   
+
+    .recommendation-card_title {
+        font-size: 2.5rem;
+    }
+}
+
+// mobile screen
+@media only screen and (max-width: 765px) {
+    
+}
+
+// small mobile
+@media only screen and (max-width: 400px) {
+    .recommendation-card {
+        flex-basis: 27%;
+    }
 }
