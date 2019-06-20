@@ -22,7 +22,7 @@ class AuthContainer extends Component {
 
     loginContent = (
         <div className="login-modal">
-            <div className="login-modal_header">
+            <div className="auth-modal_header">
                 <h2>Login</h2>
             </div>
 
