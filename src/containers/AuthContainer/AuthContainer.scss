@@ -19,7 +19,7 @@
 
 }
 
-.login-modal_header {
+.auth-modal_header {
     margin: 0 auto 30px auto;
     width: 50%;
     text-align: center;
@@ -32,7 +32,7 @@
     }
 }
 
-.login-modal_input {
+.auth-modal_input {
     display: flex;
     
     flex-direction: column;
@@ -58,19 +58,19 @@
     }
 }
 
-.login-modal_reset-password {
+.auth-modal_reset-password {
     text-decoration: underline;
     color: #4FC3F7;
 }
 
-.login-modal_options {
+.auth-modal_options {
     display: flex;
     justify-content: space-between;
     
     padding: 10px 25px;
 }
 
-.login-modal_keep-logged {
+.auth-modal_keep-logged {
    
     label {
         color: #fff !important;
@@ -86,7 +86,7 @@
     }
 }
 
-.login-modal_submit {
+.auth-modal_submit {
     margin: 30px auto;
     padding: 0 20px;
     text-align: center;
@@ -109,22 +109,29 @@
     }
 
     span {
-        margin: 40px 0 0 20px;
+        margin: 40px 0 0 15px;
+        font-size: 15px;
     }
 }
 
-.login-modal_social {
+.auth-modal_social {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.login-modal_social-btn {
+.auth-modal_social-btn {
     // padding: 0 !important;
     cursor: pointer;
 
 }
 
-.login-modal_social-btn:hover {
+.auth-modal_social-btn:hover {
     opacity: .9;
+}
+
+.auth-modal_registered {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px !important;
 }
