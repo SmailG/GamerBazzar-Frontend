@@ -1,0 +1,41 @@
+.admin {
+   min-height: 520px;
+   padding: 0 !important;
+}
+
+.admin-sidebar {
+    background: rgb(34, 55, 74);
+    height: 100%;
+    padding: 10px 0px 20px 0px !important;
+}
+
+.admin-sidebar_menu {
+    color: #fff;
+    list-style-type: none !important;
+}
+
+.admin-sidebar_item {
+    font-size: 18px;
+    text-align: left;   
+    padding: 30px; 
+    cursor: pointer;
+    
+    // border-bottom: 2px solid rgb(55, 80, 103);
+}
+
+.admin-sidebar_item:hover {
+    background: rgb(26, 43, 59);
+    border: .5 solid;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0, 0.23);
+}
+
+
+
+
+
+.admin-content {
+    background: #212D38;
+
+    height: 100%;
+}

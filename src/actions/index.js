@@ -82,8 +82,24 @@ export const clearSearchResults = (ctx) => ({type: "CLEAR_SEARCH_RESULTS", ctx})
 export const clearCtxSearchResults = (ctx) => ({type: "CLEAR_CTX_SEARCH_RESULTS", ctx});
 
 // user
-export const login = (user, sovelia) => ({ type: "LOGIN", user, sovelia });
-export const logout = () => ({ type: "LOGOUT" });
+export const login = (email, password, keepLoggedIn) => ({ 
+	type: "LOGIN",
+	password,
+	keepLoggedIn,
+
+});
+
+export const signup = (email, password, confirmPassword) => ({ 
+	type: "SIGN_UP",
+	password,
+	confirmPassword,
+
+});
+
+export const logout = () => ({ 
+	type: "LOGOUT"
+});
+
 export const changeUserPassword = (currentPassword, newPassword) => ({
 	type: "CHANGE_USER_PASSWORD",
 	currentPassword,
@@ -191,3 +207,9 @@ export const launchStructureAgent = (ctx, name, props) => ({
 	name,
 	props,
 })
+
+// conf
+export const initConf = (conf) => ({
+	type: 'INIT_CONF',
+	conf
+});

@@ -4,72 +4,167 @@ import './AuthContainer.scss';
 import { Button, Header, Input, Modal, Checkbox } from 'semantic-ui-react'
 import SvgLoader from '../../components/common/svg';
 
+import {
+    login,
+    signup
+} from '../../actions/index';
+import { initContextUIstate } from '../../actions/uiActions';
+import { validateAuthData } from '../../helpers/authHelpers';
+
 class AuthContainer extends Component {
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+            email: '',
+            password: '',
+            confirmPassword: '',
+            keepLoggedIn: false,
+            errors: [],
+            mode: ''
+        };
+      }
+
+
+    componentDidMount = () => {
+        this.props.initContextUIstate('authContext', {
+            pending: false,
+        });
+
+        this.setState({ mode: this.props.location.pathname === '/login' ? 'login' : 'signup' })
+    }
+ 
+    changeHandler = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
     
     closeHandler = () => {
         this.props.history.push('/');
     }
 
-    getStartedHandler = (e) => {
-        e.preventDefault();
-        this.props.history.push('/register');
+    loginHandler = () => {
+        const { isValid, errors } = validateAuthData(this.state, this.state.mode);
+        console.log(errors);
+        if(isValid) this.props.login(this.state.email, this.state.password, this.state.keepLoggedIn);
+        else this.setState({
+            errors: errors
+        })
     }
 
-    alreadyRegistered = (e) => {
-        e.preventDefault();
-        this.props.history.push('/login');
+    signupHandler = () => {
+        const { isValid, errors } = validateAuthData(this.state, this.state.mode)
+        if(isValid) this.props.signup(this.state.email, this.state.password, this.state.confirmPassword);
+        else this.setState({
+            errors: errors
+        })
+        
+    }
+    
+    blurHandler = (e) => {
+        validateAuthData(this.state, this.state.mode, e.target.name)
     }
 
-    loginContent = (
+    resetState = () => {
+        this.setState({
+            email: '',
+            password: '',
+            confirmPassword: '',
+            keepLoggedIn: false,
+            errors: []
+        });
+    }
+
+    modeHandler = (e) => {
+        e.preventDefault();
+        this.resetState();
+
+        switch (e.target.name) {
+            case 'signup':
+                this.props.history.push('/register');
+                this.setState({ mode: 'signup'})
+                break;
+            case 'login':
+                this.props.history.push('/login');
+                this.setState({ mode: 'login'})
+                break;
+            default:
+                break;
+        }
+    }
+
+    socialLoginHandler = (e) => {
+        e.preventDefault();
+        console.log('SOCIAL LOGIN');
+    }
+
+    loginContent = () => (
         <div className="login-modal">
             <div className="auth-modal_header">
                 <h2>Login</h2>
             </div>
 
             <div className="auth-modal_social">
-                <a className="auth-modal_social-btn">
+                <a className="auth-modal_social-btn" onClick={this.socialLoginHandler}>
                     <SvgLoader name="facebook-social"/>
                 </a>
 
-                <a className="auth-modal_social-btn">
+                <a className="auth-modal_social-btn" onClick={this.socialLoginHandler}>
                     <SvgLoader name="google-social"/>
                 </a>
 
-                <a className="auth-modal_social-btn">
-                    <SvgLoader name="twitter-social" />
+                <a className="auth-modal_social-btn" onClick={this.socialLoginHandler}>
+                    <SvgLoader name="twitter-social"/>
                 </a>
             </div>
 
             <div className="auth-modal_form">
                 <div className="auth-modal_input">
-                    <Input placeholder='E-mail Address' />
+                    <Input
+                    value={this.state.email}
+                    placeholder='E-mail Address'
+                    name="email"
+                    onChange={this.changeHandler} />
+                   {this.state.errors.filter(error => error.field==='email')
+                   .map(error => <span key={error.field+'_error'} className="auth-modal_error-message">{error.message}</span>)}
                 </div>
 
                 <div className="auth-modal_input">
-                    <Input placeholder='Password' />
+                    <Input
+                    type='password'
+                    value={this.state.password}
+                    placeholder='Password'
+                    name="password"
+                    onChange={this.changeHandler} />
+                    {this.state.errors.filter(error => error.field==='password')
+                    .map(error => <span key={error.field+'_error'} className="auth-modal_error-message">{error.message}</span>)}
                 </div>
 
                 <div className="auth-modal_options">
-                    <Checkbox className="auth-modal_keep-logged" label={'Keep me logged in'} />
+                    <Checkbox
+                    name="keepLoggedIn"
+                    checked={this.state.keepLoggedIn}
+                    onChange={this.changeHandler}
+                    className="auth-modal_keep-logged"
+                    label={'Keep me logged in'} />
                     <span className="auth-modal_reset-password">
                         <a href="">{'Forgot your password?'}</a>
                     </span>
                 </div>
 
                 <div className="auth-modal_submit">
-                    <Button>
+                    <Button onClick={this.loginHandler} >
                         LOGIN
                     </Button>
                     <span>
                         {'Not a member yet? Click here to'}
-                        <a onClick={this.getStartedHandler} href="">{' Get started'}</a>
+                        <a name="signup" onClick={this.modeHandler} href="">{' Get started'}</a>
                     </span>
                 </div>
             </div>
         </div>
     );
 
-    registrationContent = (
+    registrationContent = () => (
         <div className="registration-modal">
             <div className="login-modal">
                 <div className="auth-modal_header">
@@ -77,35 +172,54 @@ class AuthContainer extends Component {
                 </div>
 
                 <div className="auth-modal_social">
-                    <a className="auth-modal_social-btn">
+                    <a className="auth-modal_social-btn" onClick={this.socialLoginHandler}>
                         <SvgLoader name="facebook-social" />
                     </a>
 
-                    <a className="auth-modal_social-btn">
+                    <a className="auth-modal_social-btn"  onClick={this.socialLoginHandler}>
                         <SvgLoader name="google-social" />
                     </a>
 
-                    <a className="auth-modal_social-btn">
+                    <a className="auth-modal_social-btn" onClick={this.socialLoginHandler} >
                         <SvgLoader name="twitter-social" />
                     </a>
                 </div>
 
                 <div className="auth-modal_form">
                     <div className="auth-modal_input">
-                        <Input placeholder='E-mail Address' />
+                        <Input
+                        value={this.state.email}
+                        placeholder='E-mail Address'
+                        name="email"
+                        onChange={this.changeHandler} />
+                        {this.state.errors.filter(error => error.field==='email')
+                        .map(error => <span key={error.field+'_error'} className="auth-modal_error-message">{error.message}</span>)}
                     </div>
 
                     <div className="auth-modal_input">
-                        <Input placeholder='Password' />
+                        <Input
+                        type='password'
+                        value={this.state.password} 
+                        placeholder='Password' name="password"
+                        onChange={this.changeHandler} />
+                        {this.state.errors.filter(error => error.field==='password')
+                        .map(error => <span key={error.field+'_error'} className="auth-modal_error-message">{error.message}</span>)}
                     </div>
 
                     <div className="auth-modal_input">
-                        <Input placeholder='Confirm password' />
+                        <Input
+                        type='password'
+                        value={this.state.confirmPassword} 
+                        placeholder='Confirm password'
+                        name="confirmPassword"
+                        onChange={this.changeHandler} />
+                        {this.state.errors.filter(error => error.field==='confirmPassword')
+                        .map(error => <span key={error.field+'_error'} className="auth-modal_error-message">{error.message}</span>)}
                     </div>
 
                     <div className="auth-modal_submit">
-                        <Button>
-                            LOGIN
+                        <Button onClick={this.signupHandler} >
+                            SIGN UP
                     </Button>
                         <span>
                             {'By signing up you agree to our '}
@@ -118,7 +232,7 @@ class AuthContainer extends Component {
                     <div className="auth-modal_options">
                         <span className="auth-modal_registered">
                             {'Already have an account ?'}
-                            <a onClick={this.alreadyRegistered} href="">{' Sign in'}</a>
+                            <a name="login" onClick={this.modeHandler} href="">{' Sign in'}</a>
                         </span>
                     </div>
                 </div>
@@ -128,9 +242,9 @@ class AuthContainer extends Component {
     
     render() {
         const { history } = this.props;
-        let mode = this.props.location.pathname === '/login' ? 'login' : 'register'
+        const { mode } = this.state;
 
-        return (
+       if (this.state) return (
             <Modal
                 size={"small"}
                 className="auth-modal"
@@ -138,9 +252,10 @@ class AuthContainer extends Component {
                 centered={false}
                 onClose={this.closeHandler}
                 >
-                    {mode === 'login' ? this.loginContent : this.registrationContent}
+                    {mode === 'login' ? this.loginContent() : this.registrationContent()}
             </Modal>
         );
+        return null;
     }
 }
 
@@ -151,7 +266,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        
+        initContextUIstate: (ctx, obj) => dispatch(initContextUIstate(ctx, obj)),
+        login: (email, password, keepLoggedIn) => dispatch(login(email, password, keepLoggedIn)),
+        signup: (email, password, confirmPassword) => dispatch(signup(email, password, confirmPassword)),
     }
 }
 
